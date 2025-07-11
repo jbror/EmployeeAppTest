@@ -1,0 +1,30 @@
+﻿@model List<EmployeesApp.Web.Models.ViewModels.EmployeeIndexViewModel>
+@{
+    ViewData["Title"] = "Start";
+}
+
+    <h1>Our Employees</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var empl in Model)
+            {
+                <tr>
+                    <td>@empl.Id</td>
+                    <td>@empl.Name</td>
+                    <td>@empl.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>Click on the button to add a new employee! </p>
+    <a href="/Create" role="button" class="createbtn">Add</a> @*Ska använda för style senare *@
+
+

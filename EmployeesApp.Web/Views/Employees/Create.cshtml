@@ -1,0 +1,30 @@
+﻿@model EmployeesApp.Web.Models.ViewModels.EmployeeCreateViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h2>Fill in the form to add employee</h2>
+
+
+
+<form asp-action="Create" method="post">
+    
+    
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name"/>
+    <span asp-validation-for="Name"></span>
+
+    <label asp-for="Email">Email</label>
+    <input asp-for="Email"/>
+    <span asp-validation-for="Email"></span>
+
+    <input type="submit" value="Create" />
+
+</form>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@4.0.0/dist/jquery.validate.unobtrusive.min.js"></script>
+}
+
