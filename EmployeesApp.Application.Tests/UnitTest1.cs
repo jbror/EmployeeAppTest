@@ -1,10 +1,36 @@
 ﻿namespace EmployeesApp.Application.Tests
 {
-    public class UnitTest1
+    public class EmployeeServiceTests
     {
         [Fact]
-        public void Test1()
+        public void GetBy_ValidId_ReturnsEmployee()
         {
+            // Arrange
+            
+            var employeeService = new EmployeeService(new testEmployeeRepository());
+
+
+            // Act
+
+
+
+
+            // Assert
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
     }
