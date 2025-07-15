@@ -11,7 +11,7 @@ public class EmployeeServiceTests
     {
         // Arrange
         
-        var employeeService = new EmployeeService(new testEmployeeRepository());
+        var employeeService = new EmployeeService(new TestEmployeeRepository());
 
 
         // Act
