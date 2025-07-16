@@ -53,7 +53,7 @@ public class EmployeeServiceTests
 
         public Employee? GetById(int id)
         {
-            throw new NotImplementedException();
+            return _employees.FirstOrDefault(e => e.Id == id);
         }
     }
 }
