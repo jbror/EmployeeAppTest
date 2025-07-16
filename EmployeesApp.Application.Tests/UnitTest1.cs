@@ -16,7 +16,8 @@ public class EmployeeServiceTests
 
         // Act
 
-        var result = employeeService.GetById(1);
+        //var result = employeeService.GetById(1); //Testar GetById
+        var result = employeeService.GetById(1); //Testar GetAll  HÄR
 
 
 
@@ -48,7 +49,7 @@ public class EmployeeServiceTests
 
         public Employee[] GetAll()
         {
-            throw new NotImplementedException();
+            return _employees.ToArray();
         }
 
         public Employee? GetById(int id)
