@@ -30,6 +30,24 @@ public class EmployeeServiceTests
 
     }
 
+
+    [Fact]
+    puplic void GetAll_ReturnsAllEmployees()
+    {
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
     class TestEmployeeRepository : IEmployeeRepository
     {
         private readonly List<Employee> _employees = new()
