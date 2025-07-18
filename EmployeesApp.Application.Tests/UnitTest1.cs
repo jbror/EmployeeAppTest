@@ -16,8 +16,8 @@ public class EmployeeServiceTests
 
         // Act
 
-        //var result = employeeService.GetById(1); //Testar GetById
-        var result = employeeService.GetById(1); //Testar GetAll  HÄR
+        var result = employeeService.GetById(1); //Testar GetById
+       
 
 
 
@@ -32,12 +32,24 @@ public class EmployeeServiceTests
 
 
     [Fact]
-    puplic void GetAll_ReturnsAllEmployees()
+    public void GetAll_ReturnsAllEmployees()
     {
 
+        // Arange
+
+        var employeeService = new EmployeeService(new TestEmployeeRepository());
 
 
+        // Act
 
+        var result = employeeService.GetAll();
+
+
+        // Assert
+
+        Assert.NotNull(result);
+        Assert.Equal(2, result.Length);
+        Assert.Equal("Brasse", result[1].Name);
 
 
 
