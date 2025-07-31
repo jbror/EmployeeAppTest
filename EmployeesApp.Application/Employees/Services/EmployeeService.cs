@@ -6,7 +6,7 @@ namespace EmployeesApp.Application.Employees.Services;
 public class EmployeeService : IEmployeeService
 {
     private readonly IEmployeeRepository _employeeRepository;
-    private int _nextId = 4; 
+   //private int _nextId = 4; 
 
     public EmployeeService(IEmployeeRepository employeeRepository)
     {
@@ -18,9 +18,22 @@ public class EmployeeService : IEmployeeService
     public void Add(Employee employee)
     {
 
-        employee.Id = _nextId;
-        _nextId++;
-        _employeeRepository.Add(employee);        
+        //HERE - New code that sets id automatically 
+
+        var allEmployees = _employeeRepository.GetAll();
+
+        int maxId = allEmployees.Any() ? allEmployees.Max(e => e.Id) : 0;
+        employee.Id = maxId + 1;
+
+        _employeeRepository.Add(employee);
+
+
+
+
+        // old with nextID..
+        // employee.Id = _nextId;
+        //_nextId++;
+        //_employeeRepository.Add(employee);        
 
         // File.WriteAllText(@"C:\Users\bror\Documents\kaka.txt", $"Adding employee {employee.Id}");
 
