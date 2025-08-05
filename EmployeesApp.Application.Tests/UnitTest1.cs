@@ -82,7 +82,14 @@ public class EmployeeServiceTests
 
         //Assert HERE
 
+        var allEmployees = service.GetAll();
+        Assert.Equal(3, allEmployees.Length);
 
+        var addedEmployee = allEmployees.Last();
+        Assert.Equal("Holger", addedEmployee.Name);
+        Assert.Equal("superhogge@hoffz.net", addedEmployee.Email);
+        Assert.Equal(3, addedEmployee.Id);
+    }
 
 
 
