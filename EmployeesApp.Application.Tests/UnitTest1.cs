@@ -67,21 +67,20 @@ public class EmployeeServiceTests
 
         var repo = new TestEmployeeRepository();
         var service = new EmployeeService(repo);
+        var newEmployee = new Employee()
+        {
+            Name = "Holger",
+            Email = "superhogge@hoffz.net"
+        };
 
 
 
+        //Act
+
+        service.Add(newEmployee);
 
 
-
-
-
-
-
-
-
-    }
-
-
+        //Assert HERE
 
 
 
