@@ -1,6 +1,8 @@
 ﻿using EmployeesApp.Application.Employees.Services;
 using EmployeesApp.Application.Employees.Interfaces;
 using EmployeesApp.Domain.Entities;
+using System;
+using Xunit;
 
 namespace EmployeesApp.Application.Tests;
 
@@ -55,6 +57,38 @@ public class EmployeeServiceTests
 
 
     }
+
+
+    [Fact]
+    public void AddEmployee_WithRightCredentials_WillAddEmployeeToList()
+    {
+
+        //Arange
+
+        var repo = new TestEmployeeRepository();
+        var service = new EmployeeService(repo);
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
 
 
 
