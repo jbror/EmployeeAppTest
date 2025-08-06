@@ -3,6 +3,7 @@ using EmployeesApp.Application.Employees.Interfaces;
 using EmployeesApp.Domain.Entities;
 using System;
 using Xunit;
+using Moq;
 
 namespace EmployeesApp.Application.Tests;
 
@@ -12,7 +13,13 @@ public class EmployeeServiceTests
     public void GetById_ValidId_ReturnsEmployee()
     {
         // Arrange
-        
+
+        var employeeRepository = new Mock<IEmployeeRepository>();
+        employeeRepository
+            .Setup(o => o.GetById(1))
+            .Returns(new Employee { Id = 1, Name = "Hasse" });
+
+        //var employeeService = new EmployeeService(new TestEmployeeRepository());
         var employeeService = new EmployeeService(new TestEmployeeRepository());
 
 
