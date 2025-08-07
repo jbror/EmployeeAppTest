@@ -42,6 +42,36 @@ public class EmployeeServiceTests
     }
 
 
+
+    [Fact]
+    public void GetById_WithInvalidId_ThrowsArgumentException()
+    {
+        // Arrange  
+
+         var mockRepo = new Mock<IEmployeeRepository>();
+        mockRepo
+            .Setup(r => r.GetById(666))
+            .Returns((Employee?)null);
+
+        var service = new EmployeeService(mockRepo.Object);
+
+
+        // Act
+
+        var result = Record.Exception(() => service.GetById(666));
+
+        // Assert
+
+        Assert.IsType<ArgumentException>(result);
+
+
+    }
+
+
+
+
+
+
     [Fact]
     public void GetAll_ReturnsAllEmployees()
     {
