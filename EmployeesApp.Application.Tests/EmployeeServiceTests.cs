@@ -16,8 +16,8 @@ public class EmployeeServiceTests
 
         var employeeRepository = new Mock<IEmployeeRepository>();
         employeeRepository
-            //.Setup(o => o.GetById(1))
-            .Setup(o => o.GetById(It.IsAny<int>())) // kollar bara om deet är int
+            .Setup(o => o.GetById(1))
+            //.Setup(o => o.GetById(It.IsAny<int>())) // kollar bara om deet är int
             .Returns(new Employee { Id = 1, Name = "Hasse" });
 
         //var employeeService = new EmployeeService(new TestEmployeeRepository());
@@ -37,7 +37,7 @@ public class EmployeeServiceTests
         Assert.Equal(1, result!.Id);
         Assert.Equal("Hasse", result.Name);
 
-        employeeRepository.Verify(r => r.GetById(1), Times.Once());
+        employeeRepository.Verify(o => o.GetById(1), Times.Once()); // kollar om det anropas en gång.
 
     }
 
