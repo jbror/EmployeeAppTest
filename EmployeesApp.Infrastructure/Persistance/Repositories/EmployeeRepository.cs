@@ -15,9 +15,9 @@ public class EmployeeRepository : IEmployeeRepository
 
     private readonly List<Employee> employees = new()
     {
-        new Employee {Id = 1, Name = "Sauron", Email = "sauron_evil@hotmail.com"},
-        new Employee {Id = 2, Name = "Yoda", Email = "yodaboy@yahoo.com"},
-        new Employee {Id = 3, Name = "Neo", Email = "neo_03@matrix.com"}
+        new Employee {Id = 1, Name = "Sauron", Email = "sauron_evil@hotmail.com", Salary = 23000.00m},
+        new Employee {Id = 2, Name = "Yoda", Email = "yodaboy@yahoo.com", Salary = 90000.20m},
+        new Employee {Id = 3, Name = "Neo", Email = "neo_03@matrix.com", Salary = 19000.90m}
 
     };
    

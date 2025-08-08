@@ -25,7 +25,9 @@ public class EmployeesController : Controller
         {
             Id = e.Id,
             Name = e.Name,
-            Email = e.Email
+            Email = e.Email,
+            Salary = e.Salary
+
         }).ToList();
 
         _logger.LogInformation("Number of employees: {count}", viewModels.Count);
@@ -54,7 +56,8 @@ public class EmployeesController : Controller
             {
               
                 Name = vm.Name,
-                Email = vm.Email
+                Email = vm.Email,
+                Salary = vm.Salary
             };
 
             _employeeService.Add(employee);
