@@ -45,9 +45,17 @@ public class EmployeeService : IEmployeeService
     }
 
 
-    public Employee? GetById(int id)
+    public Employee GetById(int id)
     {
-        return _employeeRepository.GetById(id);
+        if (id <= 0)
+            throw new ArgumentException("Id must be greater than 0");
+
+        var employee = _employeeRepository.GetById(id);
+
+        if (employee == null)
+            throw new ArgumentException($"Employee with Id {id} not found");
+
+        return employee;
     }
 }
 

@@ -50,7 +50,7 @@ public class EmployeeServiceTests
 
          var mockRepo = new Mock<IEmployeeRepository>();
         mockRepo
-            .Setup(r => r.GetById(666))
+            .Setup(r => r.GetById(0))
             .Returns((Employee?)null);
 
         var service = new EmployeeService(mockRepo.Object);
@@ -58,7 +58,7 @@ public class EmployeeServiceTests
 
         // Act
 
-        var result = Record.Exception(() => service.GetById(666));
+        var result = Record.Exception(() => service.GetById(0));
 
         // Assert
 
