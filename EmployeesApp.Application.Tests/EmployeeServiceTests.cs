@@ -109,7 +109,8 @@ public class EmployeeServiceTests
         var newEmployee = new Employee()
         {
             Name = "Holger",
-            Email = "superhogge@hoffz.net"
+            Email = "superhogge@hoffz.net",
+            Salary = 100
         };
 
 
@@ -128,6 +129,7 @@ public class EmployeeServiceTests
         Assert.Equal("Holger", addedEmployee.Name);
         Assert.Equal("superhogge@hoffz.net", addedEmployee.Email);
         Assert.Equal(3, addedEmployee.Id);
+        Assert.Equal(100, addedEmployee.Salary);
     }
 
 
