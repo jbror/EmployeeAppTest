@@ -3,6 +3,7 @@ using EmployeesApp.Web.Models.ViewModels;
 using Microsoft.Extensions.Logging;
 using EmployeesApp.Application.Employees.Interfaces;
 using EmployeesApp.Domain.Entities;
+using Microsoft.Extensions.Logging.Abstractions;
 
 namespace EmployeesApp.Web.Controllers;
 
@@ -11,10 +12,10 @@ public class EmployeesController : Controller
     private readonly IEmployeeService _employeeService;
     private readonly ILogger<EmployeesController> _logger;
 
-    public EmployeesController(IEmployeeService employeeService, ILogger<EmployeesController> logger) // Nu med filter och ILogger
+    public EmployeesController(IEmployeeService employeeService, ILogger<EmployeesController>? logger = null) // Nu med filter och ILogger
     {
         _employeeService = employeeService;
-        _logger = logger;
+        _logger = logger ?? NullLogger<EmployeesController>.Instance;
     }
 
     [HttpGet("")]
