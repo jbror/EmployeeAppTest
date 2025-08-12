@@ -39,4 +39,59 @@ public class EmployeesControllerTests
 
 
     }
+
+
+    [Fact]
+    public void Create_Get_ReturnsViewWithEmptyViewModel()
+    {
+
+        // Arrange
+
+        var employeeService = new Mock<IEmployeeService>();
+        var controller = new EmployeesController(employeeService.Object);
+
+
+
+
+
+
+
+
+        // Act
+
+
+
+
+
+
+        // Assert
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
