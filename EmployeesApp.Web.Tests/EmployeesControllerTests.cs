@@ -1,6 +1,7 @@
 ﻿using EmployeesApp.Application.Employees.Interfaces;
 using EmployeesApp.Domain.Entities;
 using EmployeesApp.Web.Controllers;
+using EmployeesApp.Web.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 
@@ -46,26 +47,17 @@ public class EmployeesControllerTests
     {
 
         // Arrange
-
         var employeeService = new Mock<IEmployeeService>();
         var controller = new EmployeesController(employeeService.Object);
 
 
-
-
-
-
-
-
         // Act
-
-
-
-
+        var result = controller.Create();
 
 
         // Assert
-
+        var viewResult = Assert.IsType<ViewResult>(result);
+        var model = Assert.IsType<EmployeeCreateViewModel>(viewResult.Model);
 
 
 
