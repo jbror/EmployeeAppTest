@@ -73,7 +73,28 @@ public class EmployeesControllerTests
 
 
 
+    [Fact]
+    public void Create_Post_ValidModel_RedirectsToIndex()
+    {
 
+        // Arrange
+
+        var employeeService = new Mock<IEmployeeService>();
+        var controller = new EmployeesController(employeeService.Object);
+
+
+
+
+        // Act
+
+
+
+
+
+        // Assert
+
+
+    }
 
 
 
