@@ -99,16 +99,16 @@ public class EmployeesControllerTests
 
         // Assert
 
-        var viewResult = Assert.IsType<ViewResult>(result);
-        var model = Assert.IsType<EmployeeCreateViewModel>(viewResult.Model);
-
-        Assert.NotNull(model);
-        Assert.Equal(string.Empty, model.Name);
-        Assert.Equal(string.Empty, model.Email);
-        Assert.Equal(0m, model.Salary);
+        var redirectResult = Assert.IsType<RedirectToActionResult>(result);
+        Assert.Equal("Index", redirectResult.ActionName);
 
 
-
+        employeeService.Verify( s => s.Add(It.Is<Employee>(e =>
+            e.Name == vm.Name &&
+            e.Email == vm.Email &&
+            e.Salary == vm.Salary
+            )), Times.Once);
+    }
 
 
     }
@@ -127,4 +127,4 @@ public class EmployeesControllerTests
 
 
 
-}
+
