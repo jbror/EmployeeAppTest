@@ -83,15 +83,32 @@ public class EmployeesControllerTests
         var controller = new EmployeesController(employeeService.Object);
 
 
-
-
         // Act
 
+        var vm = new EmployeeCreateViewModel()
+        {
 
+            Name = "Frasse",
+            Email = "superfrasse@gmail.com",
+            Salary = 29000m
 
+        };
+
+        var result = controller.Create(vm);
 
 
         // Assert
+
+        var viewResult = Assert.IsType<ViewResult>(result);
+        var model = Assert.IsType<EmployeeCreateViewModel>(viewResult.Model);
+
+        Assert.NotNull(model);
+        Assert.Equal(string.Empty, model.Name);
+        Assert.Equal(string.Empty, model.Email);
+        Assert.Equal(0m, model.Salary);
+
+
+
 
 
     }
